@@ -1,0 +1,31 @@
+#include<iostream>
+using namespace std;
+void PrintArray(int arr[],int n){
+for(int i=0;i<n;i++){
+    cout<<arr[i]<<" ";
+}cout<<endl;
+}
+int insertion(int arr[],int n){
+    int key,j;
+    for(int i=1;i<=n-1;i++){  //loop for passes
+        key=arr[i];
+        j=i-1;
+        while(j>=0 && arr[j]>key){
+            arr[j+1]=arr[j];
+            j--;
+        }
+        arr[j+1]=key;
+    }
+
+
+}
+int main(){
+    int arr[]={10,45,23,33,8,9,18};
+    int n=sizeof arr/sizeof (int);
+    cout<<"before sorting "<<endl;
+    PrintArray(arr,n);
+    int sorting=insertion(arr,n);
+    cout<<"after sorting"<<endl;
+    PrintArray(arr,n);
+
+}
