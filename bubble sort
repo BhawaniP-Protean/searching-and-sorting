@@ -1,0 +1,40 @@
+// bubble sort  time complexity is 0(n^2);
+
+
+
+
+
+#include<iostream>
+using namespace std;
+
+void printArray(int arr[],int n){      // print function
+for(int i=0;i<n;i++){
+    cout<<arr[i]<<" ";
+}cout<<endl;}
+
+
+
+void BubbleSort(int arr[],int n){       //bubble sort function
+    int temp;
+for(int i=0;i<n;i++){  //for number of passes
+        for(int j=0;j<n-i-1;j++){
+                if(arr[j]>arr[j+1]){
+                    temp=arr[j];
+                    arr[j]=arr[j+1];;
+                    arr[j+1]=temp;
+                }
+
+        }
+}
+}
+
+
+int main(){           // main function
+int arr[]={4,2,4,45,1,6,0};
+int n=sizeof arr/sizeof (int);
+cout<<"previous unsorted ";
+printArray(arr,n);
+BubbleSort(arr,n);
+cout<<"after sorted ";
+printArray(arr,n);
+}
